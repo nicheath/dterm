@@ -1,8 +1,9 @@
-COPT		= -O3 -Wall -Werror
-BIN		= /usr/local/bin
-VERSION		= $(shell git describe --tags --long --dirty)
-SOURCEFILES	= dterm.c speeds.sh Makefile LICENCE.txt README.txt
-READLINE	= -DREADLINE -lreadline
+COPT		:= -O3 -Wall -Werror
+BIN		:= /usr/local/bin
+GIT         := /usr/bin/git
+VERSION		:= $(shell $(GIT) describe --tags --long --dirty)
+SOURCEFILES	:= dterm.c speeds.sh Makefile LICENCE.txt README.txt
+READLINE	:= -DREADLINE -lreadline
 
 dterm:		dterm.c speeds.h
 		gcc ${COPT} -o dterm dterm.c -DVERSION='"$(VERSION)"' $(READLINE)
