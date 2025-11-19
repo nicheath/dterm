@@ -27,6 +27,6 @@ jobs:
       with:
         name: build artifacts
         path: |
-          - ./dterm
-          - ./LICENCE.txt
-          - ./README.txt
+          - dterm
+          - LICENCE.txt
+          - README.txt
