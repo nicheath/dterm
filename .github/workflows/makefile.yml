@@ -19,11 +19,14 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y build-essential
         
-    - name: Make Package
-      run: make package
+    - name: Make
+      run: make
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: build artifacts
-        path: ./dterm-${{ github.sha }}
+        path: |
+          - ./dterm
+          - ./LICENCE.txt
+          - ./README.txt
