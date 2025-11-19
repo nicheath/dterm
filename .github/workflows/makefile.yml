@@ -20,7 +20,9 @@ jobs:
         sudo apt-get install -y build-essential libreadline-dev
         
     - name: Make
-      run: make
+      run: |
+        make
+        ls
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
