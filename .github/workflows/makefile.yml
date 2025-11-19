@@ -20,10 +20,10 @@ jobs:
         sudo apt-get install -y build-essential
         
     - name: Make Package
-      run: make package
+      run: make package && ls
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: dterm-${{ github.sha }}
-        path: ./dterm
+        path: ./dterm*.tgz
